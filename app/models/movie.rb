@@ -4,4 +4,5 @@ class Movie < ApplicationRecord
 
   scope :films, -> { where seasons_count: 0 }
   scope :tv_shows, -> { where('seasons_count > ?', 0) }
+  scope :ordered, -> { order(created_at: :desc) }
 end
