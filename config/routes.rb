@@ -7,6 +7,7 @@ Rails.application.routes.draw do
         get :tv_shows, on: :collection
         get :all, on: :collection
       end
+      resources :user_token, only: %i[create]
     end
   end
 end
