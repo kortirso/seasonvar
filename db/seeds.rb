@@ -27,3 +27,6 @@ episode_form.persist?
 
 movie_form = MovieForm.new(title: '300: Rise of an Empire', plot: 'Continue of 300 Spartans')
 movie_form.persist?
+
+user_form = UserForm.new(email: 'example@gmail.com', password: 'password12')
+user_form.persist?
