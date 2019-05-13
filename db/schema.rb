@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_13_145559) do
+ActiveRecord::Schema.define(version: 2019_05_13_151916) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,17 @@ ActiveRecord::Schema.define(version: 2019_05_13_145559) do
     t.datetime "updated_at", null: false
     t.integer "seasons_count", default: 0, null: false
     t.index ["title"], name: "index_movies_on_title"
+  end
+
+  create_table "purchases", force: :cascade do |t|
+    t.integer "purchaseable_id"
+    t.string "purchaseable_type"
+    t.integer "user_id"
+    t.string "video_quality"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["purchaseable_id", "purchaseable_type"], name: "index_purchases_on_purchaseable_id_and_purchaseable_type"
+    t.index ["user_id"], name: "index_purchases_on_user_id"
   end
 
   create_table "seasons", force: :cascade do |t|
