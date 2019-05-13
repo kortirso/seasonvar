@@ -36,6 +36,7 @@ gem 'oj_mimic_json'
 
 # Authentication
 gem 'devise', github: 'plataformatec/devise'
+gem 'jwt', '2.1.0'
 
 # API documentation
 gem 'apipie-rails', '0.5.8'
