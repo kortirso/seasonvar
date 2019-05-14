@@ -9,6 +9,9 @@ Rails.application.routes.draw do
       end
       resources :user_token, only: %i[create]
       resources :purchases, only: %i[create]
+      resources :users, only: %i[] do
+        get :library, on: :collection
+      end
     end
   end
 end
