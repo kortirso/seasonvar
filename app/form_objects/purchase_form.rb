@@ -28,6 +28,7 @@ class PurchaseForm
   private
 
   def purchaseable_exist?
+    return false unless purchaseable_type.present?
     @purchaseable = purchaseable_type.constantize.find_by(id: purchaseable_id)
   end
 

@@ -3,7 +3,7 @@ RSpec.describe MovieSerializer do
   let(:serializer) { described_class.new(movie).to_json }
 
   %w[id title plot created_at].each do |attr|
-    it "serializer contains role #{attr}" do
+    it "serializer contains movie #{attr}" do
       expect(serializer).to have_json_path(attr)
     end
   end
