@@ -13,7 +13,7 @@ module Api
       example '{"movies":[]}'
       error code: 401, desc: 'Unauthenticated'
       def library
-        result = ActiveModelSerializers::SerializableResource.new(@purchases, root: 'movies', each_serializer: LibrarySerializer).as_json
+        result = ActiveModelSerializers::SerializableResource.new(@purchases.includes(:purchaseable), root: 'movies', each_serializer: LibrarySerializer).as_json
         render json: result, status: 200
       end
 
