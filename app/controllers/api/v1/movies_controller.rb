@@ -31,15 +31,21 @@ module Api
       private
 
       def find_movies
-        @movies = Movie.films.ordered
+        @movies = Rails.cache.fetch('movies') do
+          ActiveModelSerializers::SerializableResource.new(Movie.films.ordered, root: 'movies', each_serializer: MovieSerializer).to_json
+        end
       end
 
       def find_tv_shows
-        @tv_shows = ActiveModelSerializers::SerializableResource.new(Movie.tv_shows.ordered, root: 'tv_shows', each_serializer: TvShowSerializer).as_json
+        @tv_shows = Rails.cache.fetch('tv_shows') do
+          ActiveModelSerializers::SerializableResource.new(Movie.tv_shows.ordered, root: 'tv_shows', each_serializer: TvShowSerializer).to_json
+        end
       end
 
       def find_all_movies
-        @movies = Movie.ordered
+        @movies = Rails.cache.fetch('movies_all') do
+          ActiveModelSerializers::SerializableResource.new(Movie.ordered, root: 'movies', each_serializer: MovieSerializer).to_json
+        end
       end
     end
   end
