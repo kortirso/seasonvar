@@ -1,24 +1,24 @@
-# README
+## Seasonvar
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### To install application you need run commands:
 
-Things you may want to cover:
+1. `git clone https://github.com/kortirso/seasonvar`.
+2. `cd seasonvar`.
+3. `bundle install`.
+4. `yarn install`.
+5. `rake db:create`.
+6. `rake db:schema:load`.
+7. `touch tmp/caching-dev.txt`.
 
-* Ruby version
+#### To launch application:
 
-* System dependencies
+1. In project folder run `foreman s`.
+2. Open `http://localhost:5000`.
 
-* Configuration
+#### To launch tests:
 
-* Database creation
+1. In project folder run `rspec`.
 
-* Database initialization
+#### To launch code checking:
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. In project folder run `rubocop`.
