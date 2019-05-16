@@ -1,4 +1,4 @@
-# Represents objects with roles links
+# Represents objects available for purchases
 module Purchaseable
   extend ActiveSupport::Concern
 
