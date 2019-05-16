@@ -41,9 +41,6 @@ gem 'jwt', '2.1.0'
 # API documentation
 gem 'apipie-rails', '0.5.8'
 
-# Separate business logic
-gem 'interactor'
-
 # Form objects
 gem 'virtus'
 
